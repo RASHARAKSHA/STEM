@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Horizon Academy - Empowering next-generation leaders through exceptional academics, innovative programs, and a vibrant community. Join us today.">
+  <meta name="keywords" content="Horizon Academy, private school, best academy, quality education, modern school website, enrollment">
+  <title>Horizon Academy | Empowering Minds, Shaping Futures</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">Horizon <span>Academy</span></div>
+      </a>
+      
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="academics.html" class="nav-link">Academics</a></li>
+        <li><a href="#campus" class="nav-link">Campus Life</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-secondary">Inquire</a>
+        <a href="#admissions" class="btn btn-primary">Apply Now</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-tagline">Welcome to Horizon Academy</span>
+          <h1>Empowering Minds,<br>Shaping <span>Futures</span></h1>
+          <p class="hero-desc">
+            At Horizon Academy, we nurture curiosity, encourage creativity, and cultivate critical thinking. We prepare student leaders to thrive in an ever-changing world with a rigorous curriculum, supportive mentors, and state-of-the-art facilities.
+          </p>
+          <div class="hero-actions">
+            <a href="academics.html" class="btn btn-primary">Explore Programs</a>
+            <a href="#contact" class="btn btn-secondary">Visit Campus</a>
+          </div>
+        </div>
+        
+        <div class="hero-image-wrapper">
+          <div class="hero-image">
+            <img src="campus_hero.png" alt="Horizon Academy modern school campus and learning center building">
+          </div>
+          <!-- Floating stats badge -->
+          <div class="badge-floating">
+            <div class="badge-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+            </div>
+            <div class="badge-info">
+              <h4>Top Ranked</h4>
+              <p>#1 School in the Region</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Photo -->
+    <section class="section-padding featured-photo-section">
+      <div class="container text-center">
+        <div class="featured-photo-wrapper">
+          <img src="Folder/rakshaphot.jpg" alt="Portrait photograph">
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="98">98%</div>
+          <div class="stat-label">University Acceptance</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="15">15+</div>
+          <div class="stat-label">Average Class Size</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="45">45+</div>
+          <div class="stat-label">Extracurriculars</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="12">12+</div>
+          <div class="stat-label">Acres of Green Campus</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-padding" id="about" style="background: var(--bg-card);">
+      <div class="container text-center">
+        <span class="hero-tagline" style="margin-bottom: 8px;">Our Core Philosophy</span>
+        <h2 class="section-title">Where Excellence Meets Opportunity</h2>
+        <p class="section-subtitle">We believe education is more than memorization. It is about understanding, innovation, character development, and discovery.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; text-align: left; margin-top: 40px;">
+          <div style="padding: 30px; border-radius: var(--radius-md); background: var(--bg-main); border-top: 4px solid var(--secondary-color);">
+            <div style="color: var(--primary-color); margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-family: var(--font-sans);">Academic Excellence</h3>
+            <p style="font-size: 0.95rem;">Rigorous academic pathways tailored to students' needs and passions, including STEM, Humanities, and the Arts.</p>
+          </div>
+
+          <div style="padding: 30px; border-radius: var(--radius-md); background: var(--bg-main); border-top: 4px solid var(--primary-color);">
+            <div style="color: var(--primary-color); margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-family: var(--font-sans);">Holistic Development</h3>
+            <p style="font-size: 0.95rem;">Extensive athletic, artistic, and leadership opportunities that support personal growth and build lasting resilience.</p>
+          </div>
+
+          <div style="padding: 30px; border-radius: var(--radius-md); background: var(--bg-main); border-top: 4px solid var(--secondary-color);">
+            <div style="color: var(--primary-color); margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-family: var(--font-sans);">Global Community</h3>
+            <p style="font-size: 0.95rem;">A diverse, inclusive environment that encourages students to appreciate perspectives and act as global citizens.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section class="section-padding" id="academics">
+      <div class="container">
+        <div class="text-center">
+          <span class="hero-tagline" style="margin-bottom: 8px;">Educational Journey</span>
+          <h2 class="section-title">Academic Programs</h2>
+          <p class="section-subtitle">We guide students at every phase of development, aligning curriculum to inspire intellectual curiosity.</p>
+        </div>
+
+        <div class="programs-grid">
+          <!-- Program 1 -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=600" alt="Elementary school students playing on desks">
+              <span class="program-tag">Ages 5 - 10</span>
+            </div>
+            <div class="program-content">
+              <h3>Primary Education</h3>
+              <p>In our elementary school, children build foundational literacy, numeracy, social skills, and creative problem-solving through inquiry-based learning.</p>
+              <a href="#" class="program-link">
+                Learn More 
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Program 2 -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600" alt="Teacher explaining to middle school students">
+              <span class="program-tag">Ages 11 - 14</span>
+            </div>
+            <div class="program-content">
+              <h3>Middle School</h3>
+              <p>Our middle school curriculum focuses on academic independence, deep subject matter exploration, scientific thinking, and team-oriented collaboration.</p>
+              <a href="#" class="program-link">
+                Learn More 
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Program 3 -->
+          <div class="program-card">
+            <div class="program-img">
+              <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="High school graduation / classroom">
+              <span class="program-tag">Ages 15 - 18</span>
+            </div>
+            <div class="program-content">
+              <h3>High School</h3>
+              <p>Advanced placement programs, leadership training, and college readiness programs prepare older students for prestigious universities worldwide.</p>
+              <a href="#" class="program-link">
+                Learn More 
+                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus Highlights Section (Gallery) -->
+    <section class="section-padding campus-showcase" id="campus">
+      <div class="container">
+        <div class="text-center">
+          <span class="hero-tagline" style="margin-bottom: 8px;">Vibrant Campus Life</span>
+          <h2 class="section-title">Campus Highlights</h2>
+          <p class="section-subtitle">Beyond the classroom, our students engage in a rich ecosystem of activities, fostering community spirit.</p>
+        </div>
+
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=500" alt="State-of-the-art campus library">
+            <div class="showcase-overlay">
+              <h3>Creative Arts</h3>
+              <p>Painting, sculpting, and theater programs where imagination runs free.</p>
+            </div>
+          </div>
+
+          <div class="showcase-item">
+            <img src="https://images.unsplash.com/photo-1544640808-32ca72ac7f37?auto=format&fit=crop&q=80&w=500" alt="School sports field track">
+            <div class="showcase-overlay">
+              <h3>Athletics</h3>
+              <p>12+ sports teams building sportsmanship, teamwork, and physical fitness.</p>
+            </div>
+          </div>
+
+          <div class="showcase-item">
+            <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=500" alt="Science laboratory students testing chemicals">
+            <div class="showcase-overlay">
+              <h3>STEM Innovation</h3>
+              <p>Robotics labs, coding classes, and hands-on science experiments.</p>
+            </div>
+          </div>
+
+          <div class="showcase-item">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=500" alt="Students sitting on grass collaborating">
+            <div class="showcase-overlay">
+              <h3>Community Care</h3>
+              <p>Social volunteering projects focused on environmental and humanitarian care.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission Call to Action Banner -->
+    <section class="section-padding promo-section" id="admissions">
+      <div class="container promo-container">
+        <div class="promo-text">
+          <h2>Admissions Now Open for Academic Year 2026-27</h2>
+          <p>Give your child the foundation they need to reach their highest potential. Request an information packet or apply online to schedule a campus tour today.</p>
+        </div>
+        <div class="promo-actions">
+          <a href="#contact" class="btn btn-gold">Request Info</a>
+          <a href="#contact" class="btn btn-primary" style="background: var(--text-white); color: var(--primary-color);">Apply Online</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section with Form -->
+    <section class="section-padding" id="contact" style="background: var(--bg-main);">
+      <div class="container contact-grid">
+        <!-- Info Column -->
+        <div class="contact-info">
+          <span class="hero-tagline" style="margin-bottom: 8px;">Get in Touch</span>
+          <h3>Let's Start the Conversation</h3>
+          <p style="margin-bottom: 30px;">Have questions about programs, fees, or scheduling a tour? Contact our admissions office directly, and our team will get back to you shortly.</p>
+          
+          <ul class="contact-details">
+            <li>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="contact-text">
+                <h4>Address</h4>
+                <p>1042 Learning Boulevard, Education District, NY 10012</p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="contact-text">
+                <h4>Admissions Office</h4>
+                <p>+1 (555) 342-9988</p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="contact-text">
+                <h4>Email Address</h4>
+                <p>admissions@horizonacademy.edu</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-wrapper" id="inquiry-form-container">
+          <h3>Inquire Online</h3>
+          <p>Please fill out this form and our Admissions Officer will call you back within 24 hours.</p>
+          <form id="inquiry-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Parent's First Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Parent's Last Name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" placeholder="Phone Number" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <select class="form-control" required style="appearance: none;">
+                <option value="" disabled selected>Select Grade of Interest</option>
+                <option value="primary">Primary (Ages 5 - 10)</option>
+                <option value="middle">Middle School (Ages 11 - 14)</option>
+                <option value="high">High School (Ages 15 - 18)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Your Message or Specific Questions..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a href="#" class="logo">
+          <div class="logo-icon">H</div>
+          <div class="logo-text" style="color: var(--text-white);">Horizon <span style="color: var(--secondary-color);">Academy</span></div>
+        </a>
+        <p>Horizon Academy offers world-class elementary and secondary educational pathways designed to guide individual student development and build character.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Horizon</a></li>
+          <li><a href="academics.html">Academic Programs</a></li>
+          <li><a href="#campus">Campus Environment</a></li>
+          <li><a href="#admissions">Admissions Info</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Parent Portal</a></li>
+          <li><a href="#">Student Handbook</a></li>
+          <li><a href="#">School Calendar</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to our newsletter to receive calendar updates and highlights from campus life.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+          <button type="submit" class="btn btn-gold" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Horizon Academy. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline Logic for Smooth Navigation & Interaction -->
+  <script>
+    // Header Scroll Styling Action
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Hamburger Menu Action
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when links are clicked on mobile viewports
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Inquiry Form Interaction (Mock submit)
+    const inquiryForm = document.getElementById('inquiry-form');
+    const formContainer = document.getElementById('inquiry-form-container');
+
+    inquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Save details / Mock response message
+      formContainer.innerHTML = `
+        <div style="text-align: center; padding: 40px 10px; color: var(--primary-color);">
+          <div style="font-size: 3.5rem; margin-bottom: 20px; color: var(--secondary-color);">✓</div>
+          <h3 style="font-size: 1.8rem; margin-bottom: 12px; font-family: var(--font-serif);">Thank You!</h3>
+          <p style="color: var(--text-light); max-width: 320px; margin: 0 auto;">Your inquiry has been successfully received. Our admissions team will reach out to you within one business day.</p>
+        </div>
+      `;
+    });
+
+    // Newsletter mock subscribe
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = newsletterForm.querySelector('input');
+      const email = emailInput.value;
+      newsletterForm.innerHTML = `<p style="color: var(--secondary-color); font-weight: 600; margin: 0; padding-top: 10px;">✓ Subscribed successfully!</p>`;
+    });
+
+    // Simple Intersection Observer to animate counters
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const animateStats = () => {
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const originalText = stat.innerText;
+        let count = 0;
+        const isPercent = originalText.includes('%');
+        const isPlus = originalText.includes('+');
+        const duration = 1200; // ms
+        const increment = target / (duration / 16); // 60fps roughly
+        
+        const updateCount = () => {
+          count += increment;
+          if (count >= target) {
+            stat.innerText = target + (isPercent ? '%' : '') + (isPlus ? '+' : '');
+          } else {
+            stat.innerText = Math.floor(count) + (isPercent ? '%' : '') + (isPlus ? '+' : '');
+            requestAnimationFrame(updateCount);
+          }
+        };
+        updateCount();
+      });
+    };
+
+    // Trigger stats counter animation when section is scrolled into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+  </script>
+</body>
+</html>

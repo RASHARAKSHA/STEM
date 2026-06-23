@@ -1,0 +1,18 @@
+{
+  "name": "horizon-academy-website",
+  "version": "1.0.0",
+  "description": "Horizon Academy Portal with Express Backend and SQLite Database",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "powershell -ExecutionPolicy Bypass -File .\\start-server.ps1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  },
+  "author": "",
+  "license": "ISC"
+}

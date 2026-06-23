@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn more about Horizon Academy - Our history, mission, leadership, and state-of-the-art facilities. Discover how we empower student leaders.">
+  <meta name="keywords" content="Horizon Academy about, school history, school principal, mission and values, campus facilities">
+  <title>About Us | Horizon Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Milestone Timeline Styles */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 2px solid var(--secondary-color);
+      margin-top: 20px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -41px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      border: 3px solid var(--bg-main);
+      box-shadow: var(--shadow-sm);
+    }
+    .timeline-year {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 4px;
+    }
+    .timeline-content h4 {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+    .timeline-content p {
+      font-size: 0.9rem;
+    }
+
+    /* Principal Section Styles */
+    .principal-section {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 50px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(var(--primary-rgb), 0.03);
+    }
+    .principal-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .principal-img-wrapper {
+      position: relative;
+    }
+    .principal-img-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: -15px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid var(--secondary-color);
+      border-radius: var(--radius-md);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .principal-img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      box-shadow: var(--shadow-md);
+    }
+    .principal-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .principal-message blockquote {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--primary-color);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 24px;
+    }
+    .principal-message blockquote::before {
+      content: '“';
+      position: absolute;
+      left: 0;
+      top: -10px;
+      font-size: 3rem;
+      color: var(--secondary-color);
+      font-family: var(--font-serif);
+      line-height: 1;
+    }
+    .principal-signature {
+      margin-top: 30px;
+    }
+    .principal-signature h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--primary-color);
+    }
+    .principal-signature p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* Interactive Facilities Style */
+    .facility-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(var(--primary-rgb), 0.03);
+    }
+    .facility-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(var(--secondary-rgb), 0.2);
+    }
+    .facility-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .facility-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+    .facility-card:hover .facility-img img {
+      transform: scale(1.06);
+    }
+    .facility-info {
+      padding: 24px;
+    }
+    .facility-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+    .facility-info p {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 992px) {
+      .principal-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .principal-img-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .principal-section {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body class="theme-pink">
+
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">Horizon <span>Academy</span></div>
+      </a>
+      
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About Us</a></li>
+        <li><a href="academics.html" class="nav-link">Academics</a></li>
+        <li><a href="index.html#campus" class="nav-link">Campus Life</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#contact" class="btn btn-secondary">Inquire</a>
+        <a href="index.html#admissions" class="btn btn-primary">Apply Now</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Hero Section -->
+    <section class="hero" id="about-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-tagline">Nurturing Excellence</span>
+          <h1>Shaping Minds,<br>Inspiring <span>Futures</span></h1>
+          <p class="hero-desc">
+            At Horizon Academy, we guide our students through an inspiring journey of academic inquiry, creative expression, and character development, preparing them to make a positive mark on the world.
+          </p>
+          <div class="hero-actions">
+            <a href="#history" class="btn btn-primary">Our Story</a>
+            <a href="#principal" class="btn btn-secondary">Principal's Message</a>
+          </div>
+        </div>
+        
+        <div class="hero-image-wrapper">
+          <div class="hero-image">
+            <img src="school_history.png" alt="Horizon Academy school heritage and collaborative students">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- School History Section -->
+    <section class="section-padding" id="history" style="background: var(--bg-card);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start;">
+          <div>
+            <span class="hero-tagline">Our Legacy</span>
+            <h2 class="section-title" style="display: block;">Our Journey of Excellence</h2>
+            <p style="margin-bottom: 20px; font-size: 1.05rem; line-height: 1.7;">
+              Horizon Academy was founded in 2005 with a clear, ambitious mission: to offer a comprehensive, child-centered educational experience that challenges minds and fosters noble character. From our modest beginnings with 50 students, we have expanded to serve a vibrant community of over 1,200 learners.
+            </p>
+            <p style="margin-bottom: 24px; font-size: 1rem; line-height: 1.7;">
+              Our curriculum blends traditional academic rigor with modern, inquiry-based STEM and liberal arts programs. Located on a beautifully landscaped 12-acre campus, we provide students with state-of-the-art labs, creative arts studios, and athletic centers designed to support growth inside and outside the classroom.
+            </p>
+            <div style="display: flex; gap: 30px; margin-top: 30px;">
+              <div>
+                <h3 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 4px;">20+</h3>
+                <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Years of Excellence</p>
+              </div>
+              <div style="border-left: 1px solid rgba(var(--primary-rgb), 0.15); padding-left: 30px;">
+                <h3 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 4px;">98%</h3>
+                <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">University Rate</p>
+              </div>
+              <div style="border-left: 1px solid rgba(var(--primary-rgb), 0.15); padding-left: 30px;">
+                <h3 style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 4px;">1,200+</h3>
+                <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Active Students</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vertical Milestones -->
+          <div>
+            <span class="hero-tagline">Key Milestones</span>
+            <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Historical Timeline</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-year">2005</div>
+                <div class="timeline-content">
+                  <h4>Academy Inception</h4>
+                  <p>Horizon Academy opens its doors to the first cohort of elementary and middle school students.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="timeline-content">
+                  <h4>STEM Innovation Center</h4>
+                  <p>Inaugurated our cutting-edge Science, Technology, Engineering, and Math labs and robotics workshop.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <div class="timeline-content">
+                  <h4>High School Expansion</h4>
+                  <p>Graduated our first High School cohort, with students gaining entry into prestigious universities worldwide.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                  <h4>Global Arts & Athletics Wing</h4>
+                  <p>Completed construction of our Performing Arts Auditorium and modern, indoor athletic arena.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission, Vision & Core Values Section -->
+    <section class="section-padding" id="mission-vision" style="background: var(--bg-main);">
+      <div class="container text-center">
+        <span class="hero-tagline" style="margin-bottom: 8px;">Our Core Framework</span>
+        <h2 class="section-title">What Drives Us Every Day</h2>
+        <p class="section-subtitle">Our mission, vision, and core values shape every lesson, project, and interaction at Horizon Academy.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; text-align: left; margin-top: 40px;">
+          <!-- Mission -->
+          <div style="padding: 30px; border-radius: var(--radius-md); background: var(--bg-card); border-top: 4px solid var(--secondary-color); box-shadow: var(--shadow-sm);">
+            <div style="color: var(--primary-color); margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-family: var(--font-sans);">Our Mission</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6;">To provide a rigorous and comprehensive educational framework that inspires intellectual curiosity, fosters creative expression, and builds resilient, compassionate leaders.</p>
+          </div>
+
+          <!-- Vision -->
+          <div style="padding: 30px; border-radius: var(--radius-md); background: var(--bg-card); border-top: 4px solid var(--primary-color); box-shadow: var(--shadow-sm);">
+            <div style="color: var(--primary-color); margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-family: var(--font-sans);">Our Vision</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6;">To stand as a global beacon of primary and secondary educational innovation, raising generations of confident, empathetic citizens who lead with integrity.</p>
+          </div>
+
+          <!-- Values -->
+          <div style="padding: 30px; border-radius: var(--radius-md); background: var(--bg-card); border-top: 4px solid var(--secondary-color); box-shadow: var(--shadow-sm);">
+            <div style="color: var(--primary-color); margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 12px; font-family: var(--font-sans);">Core Values</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6;"><strong>Integrity:</strong> Acting with honesty and respect.<br><strong>Curiosity:</strong> Asking bold questions.<br><strong>Empathy:</strong> Understanding others.<br><strong>Excellence:</strong> Putting forth our absolute best.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principal Section -->
+    <section class="section-padding" id="principal" style="background: var(--bg-card);">
+      <div class="container">
+        <div class="principal-section">
+          <div class="principal-grid">
+            <div class="principal-img-wrapper">
+              <div class="principal-img">
+                <img src="principal_portrait.png" alt="Dr. Evelyn Thorne, Principal of Horizon Academy">
+              </div>
+            </div>
+            <div class="principal-message">
+              <span class="hero-tagline">Leadership Message</span>
+              <h2 style="font-size: 2rem; margin-bottom: 20px;">Welcome from Our Principal</h2>
+              <blockquote>
+                True education does not merely fill the mind with facts; it sparks a lifelong journey of self-discovery, resilience, and compassion.
+              </blockquote>
+              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;">
+                Welcome to Horizon Academy. Every day, I am profoundly inspired by the curiosity of our students and the dedication of our faculty. We strive to create an environment where students feel safe to explore new ideas, fail forward, and develop the emotional intelligence needed to guide their academic excellence.
+              </p>
+              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;">
+                We partner closely with families to ensure our classrooms offer supportive, personalized instruction. Whether your child is just starting their primary school journey or preparing for university admissions, they will find an engaging home here at Horizon.
+              </p>
+              <div class="principal-signature">
+                <h4>Dr. Evelyn Thorne</h4>
+                <p>Principal, Horizon Academy</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="section-padding campus-showcase" id="facilities">
+      <div class="container">
+        <div class="text-center">
+          <span class="hero-tagline" style="margin-bottom: 8px;">Explore Our Campus</span>
+          <h2 class="section-title">World-Class Facilities</h2>
+          <p class="section-subtitle">We believe learning environments shape student outcomes. Our modern facilities inspire academic focus and creative expression.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+          <!-- Facility 1 -->
+          <div class="facility-card">
+            <div class="facility-img">
+              <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=500" alt="Horizon Academy main reading room and library">
+            </div>
+            <div class="facility-info">
+              <h3 style="color: var(--primary-color);">The Rose Library</h3>
+              <p>A multi-story, quiet study sanctuary containing 30,000+ volumes, private study pods, and collaborative workspace media tables.</p>
+            </div>
+          </div>
+
+          <!-- Facility 2 -->
+          <div class="facility-card">
+            <div class="facility-img">
+              <img src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&q=80&w=500" alt="Chemistry lab with modern glass testing items">
+            </div>
+            <div class="facility-info">
+              <h3 style="color: var(--primary-color);">Science & Innovation Wing</h3>
+              <p>State-of-the-art laboratories equipped for hands-on college-level chemistry, biology, physics projects, and robotics builds.</p>
+            </div>
+          </div>
+
+          <!-- Facility 3 -->
+          <div class="facility-card">
+            <div class="facility-img">
+              <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&q=80&w=500" alt="Symphony orchestra performing hall">
+            </div>
+            <div class="facility-info">
+              <h3 style="color: var(--primary-color);">Performing Arts Auditorium</h3>
+              <p>A beautiful 500-seat auditorium with professional acoustic panels, digital sound boards, and full backstage theater suites.</p>
+            </div>
+          </div>
+
+          <!-- Facility 4 -->
+          <div class="facility-card">
+            <div class="facility-img">
+              <img src="https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&q=80&w=500" alt="Horizon sports gymnasium hall">
+            </div>
+            <div class="facility-info">
+              <h3 style="color: var(--primary-color);">Athletic Arena</h3>
+              <p>Features an Olympic-sized indoor swimming pool, basketball courts, and outdoor synthetic tracks supporting 12+ school sports.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admission CTA Banner -->
+    <section class="section-padding promo-section" id="admission-cta">
+      <div class="container promo-container">
+        <div class="promo-text">
+          <h2>Embark on Your Horizon Journey</h2>
+          <p>Admissions are open for the academic year 2026-27. Request information or speak directly with an admissions officer today.</p>
+        </div>
+        <div class="promo-actions">
+          <a href="index.html#contact" class="btn btn-gold">Request Info</a>
+          <a href="index.html#contact" class="btn btn-primary" style="background: var(--text-white); color: var(--primary-color);">Apply Online</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">H</div>
+          <div class="logo-text" style="color: var(--text-white);">Horizon <span style="color: var(--secondary-color);">Academy</span></div>
+        </a>
+        <p>Horizon Academy offers world-class elementary and secondary educational pathways designed to guide individual student development and build character.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="about.html">About Horizon</a></li>
+          <li><a href="academics.html">Academic Programs</a></li>
+          <li><a href="index.html#campus">Campus Environment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Parent Portal</a></li>
+          <li><a href="#">Student Handbook</a></li>
+          <li><a href="#">School Calendar</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to our newsletter to receive calendar updates and highlights from campus life.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+          <button type="submit" class="btn btn-gold" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Horizon Academy. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Logic for Menu Interaction -->
+  <script>
+    // Header Scroll Styling Action
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Hamburger Menu Action
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when links are clicked on mobile viewports
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Newsletter mock subscribe
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = newsletterForm.querySelector('input');
+      newsletterForm.innerHTML = `<p style="color: var(--secondary-color); font-weight: 600; margin: 0; padding-top: 10px;">✓ Subscribed successfully!</p>`;
+    });
+  </script>
+</body>
+</html>

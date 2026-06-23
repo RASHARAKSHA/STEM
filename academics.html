@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Academic Programs at Horizon Academy - Inspiring minds and shaping futures. Leave feedback on our programs.">
+  <meta name="keywords" content="Horizon Academy academics, school curriculum, educational programs, academics feedback form">
+  <title>Academics | Horizon Academy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Academics Specific Styles */
+    .academics-hero {
+      background: radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.06) 0%, transparent 40%),
+                  radial-gradient(circle at 10% 90%, rgba(201, 160, 84, 0.06) 0%, transparent 40%);
+    }
+
+    .curriculum-details {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 50px;
+      border: 1px solid rgba(var(--primary-rgb), 0.02);
+    }
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .curriculum-card {
+      background: var(--bg-main);
+      padding: 30px;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--primary-color);
+      transition: var(--transition-smooth);
+    }
+    
+    .curriculum-card:nth-child(2) {
+      border-left-color: var(--secondary-color);
+    }
+    
+    .curriculum-card:nth-child(3) {
+      border-left-color: var(--primary-light);
+    }
+
+    .curriculum-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .curriculum-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      font-family: var(--font-sans);
+    }
+
+    .curriculum-card ul {
+      list-style-type: none;
+      margin-top: 15px;
+    }
+
+    .curriculum-card ul li {
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .curriculum-card ul li::before {
+      content: '✓';
+      color: var(--secondary-color);
+      font-weight: bold;
+    }
+
+    /* Feedback Form Styles */
+    .feedback-section {
+      background: var(--bg-main);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feedback-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 50px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(var(--primary-rgb), 0.03);
+    }
+
+    /* Star Rating CSS */
+    .rating-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+    }
+
+    .rating-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 12px;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      color: #cbd5e1; /* slate 300 */
+      transition: var(--transition-smooth);
+    }
+
+    .stars label svg {
+      fill: currentColor;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Light up stars on hover and checked state */
+    .stars label:hover,
+    .stars label:hover ~ label,
+    .stars input:checked ~ label {
+      color: #fbbf24; /* Amber 400 (Gold) */
+    }
+
+    .stars label:hover svg {
+      transform: scale(1.15);
+    }
+
+    /* Spinner Animation */
+    .btn-submit {
+      width: 100%;
+      position: relative;
+    }
+
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s linear infinite;
+      position: absolute;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .btn-submit.loading .btn-text {
+      visibility: hidden;
+    }
+
+    .btn-submit.loading .spinner {
+      display: block;
+    }
+
+    @media (max-width: 992px) {
+      .curriculum-grid {
+        grid-template-columns: 1fr;
+      }
+      .feedback-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">Horizon <span>Academy</span></div>
+      </a>
+      
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="academics.html" class="nav-link active">Academics</a></li>
+        <li><a href="index.html#campus" class="nav-link">Campus Life</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="index.html#contact" class="btn btn-secondary">Inquire</a>
+        <a href="index.html#admissions" class="btn btn-primary">Apply Now</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Academics Hero Section -->
+    <section class="hero academics-hero" id="academics-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-tagline">Academic Excellence</span>
+          <h1>Empowering Minds,<br>Shaping <span>Leaders</span></h1>
+          <p class="hero-desc">
+            Our academic environment encourages curiosity, cultivates critical thinking, and supports holistic student development through a globally accredited curriculum.
+          </p>
+          <div class="hero-actions">
+            <a href="#curriculum" class="btn btn-primary">Our Programs</a>
+            <a href="#feedback" class="btn btn-secondary">Submit Feedback</a>
+          </div>
+        </div>
+        
+        <div class="hero-image-wrapper">
+          <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=600" alt="Horizon Academy graduation ceremony details">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Curriculum Overview -->
+    <section class="section-padding" id="curriculum" style="background: var(--bg-card);">
+      <div class="container">
+        <div class="text-center">
+          <span class="hero-tagline" style="margin-bottom: 8px;">Learning Framework</span>
+          <h2 class="section-title">Educational Divisions</h2>
+          <p class="section-subtitle">We structure our divisions to align with student cognitive milestones, encouraging independence and exploration.</p>
+        </div>
+
+        <div class="curriculum-details">
+          <h3 style="font-size: 1.6rem; color: var(--primary-color); margin-bottom: 16px;">Rigorous Curriculum Design</h3>
+          <p style="color: var(--text-light); line-height: 1.7;">
+            Horizon Academy employs an integrated international curriculum accredited by global councils. Our academic calendar combines Core Subjects, Advanced Electives, and Interactive Projects designed to build research capability and team leadership.
+          </p>
+
+          <div class="curriculum-grid">
+            <!-- Primary division -->
+            <div class="curriculum-card">
+              <h3>Primary (Grades 1-5)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-light);">Focuses on primary language arts, math numeracy, spatial reasoning, and social foundations.</p>
+              <ul>
+                <li>Guided Inquiry Methods</li>
+                <li>Creative Arts Integration</li>
+                <li>Foundational Literacy</li>
+                <li>Emotional Growth Care</li>
+              </ul>
+            </div>
+
+            <!-- Middle division -->
+            <div class="curriculum-card">
+              <h3>Middle School (Grades 6-8)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-light);">Transitions students toward independent research, laboratory science, and structured collaboration.</p>
+              <ul>
+                <li>Hands-on Science Labs</li>
+                <li>Pre-Algebra & Geometry</li>
+                <li>Introductory Coding</li>
+                <li>Public Speaking Seminars</li>
+              </ul>
+            </div>
+
+            <!-- High School division -->
+            <div class="curriculum-card">
+              <h3>High School (Grades 9-12)</h3>
+              <p style="font-size: 0.9rem; color: var(--text-light);">Focuses on college readiness, Advanced Placement (AP) electives, and leadership project execution.</p>
+              <ul>
+                <li>Advanced AP Pathways</li>
+                <li>College Advising Program</li>
+                <li>Thesis Research Project</li>
+                <li>Community Leadership</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section class="section-padding feedback-section" id="feedback">
+      <div class="container">
+        <div class="text-center">
+          <span class="hero-tagline" style="margin-bottom: 8px;">Your Opinion Matters</span>
+          <h2 class="section-title">Academic Feedback Portal</h2>
+          <p class="section-subtitle">Help us continually refine our educational models. All submissions are stored securely in our academic database.</p>
+        </div>
+
+        <div class="feedback-container" id="feedback-form-wrapper">
+          <form id="academic-feedback-form">
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fb-name" style="font-weight: 600; color: var(--primary-color); display: block; margin-bottom: 8px; font-size: 0.95rem;">Full Name</label>
+                <input type="text" id="fb-name" class="form-control" placeholder="Jane Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="fb-email" style="font-weight: 600; color: var(--primary-color); display: block; margin-bottom: 8px; font-size: 0.95rem;">Email Address</label>
+                <input type="email" id="fb-email" class="form-control" placeholder="jane.doe@example.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fb-role" style="font-weight: 600; color: var(--primary-color); display: block; margin-bottom: 8px; font-size: 0.95rem;">Your Role</label>
+                <select id="fb-role" class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%230f2d59%27 stroke-width=%272%27%3E%3Cpolyline points=%276 9 12 15 18 9%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 20px center; background-size: 16px;">
+                  <option value="" disabled selected>Select Role</option>
+                  <option value="Parent">Parent / Guardian</option>
+                  <option value="Student">Current Student</option>
+                  <option value="Alumnus">Academy Alumnus</option>
+                  <option value="Educator">Educator / Teacher</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fb-type" style="font-weight: 600; color: var(--primary-color); display: block; margin-bottom: 8px; font-size: 0.95rem;">Feedback Area</label>
+                <select id="fb-type" class="form-control" required style="appearance: none; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%230f2d59%27 stroke-width=%272%27%3E%3Cpolyline points=%276 9 12 15 18 9%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 20px center; background-size: 16px;">
+                  <option value="" disabled selected>Select Topic</option>
+                  <option value="Curriculum">Curriculum Quality</option>
+                  <option value="Teaching">Instruction & Faculty</option>
+                  <option value="Facilities">Resource Labs & Classrooms</option>
+                  <option value="Extracurriculars">Clubs & Athletics</option>
+                  <option value="General">General Suggestion</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Star Rating Row -->
+            <div class="rating-container">
+              <span class="rating-label">Overall Academic Satisfaction</span>
+              <div class="stars" id="rating-stars">
+                <input type="radio" name="rating" id="star5" value="5" required>
+                <label for="star5" title="5 Stars">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </label>
+                
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4" title="4 Stars">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </label>
+                
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3" title="3 Stars">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </label>
+                
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2" title="2 Stars">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </label>
+                
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1" title="1 Star">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 30px;">
+              <label for="fb-comments" style="font-weight: 600; color: var(--primary-color); display: block; margin-bottom: 8px; font-size: 0.95rem;">Detailed Feedback & Suggestions</label>
+              <textarea id="fb-comments" class="form-control" placeholder="Please elaborate on your experience or share suggestions for improvement..." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">
+              <span class="btn-text">Submit Feedback</span>
+              <div class="spinner"></div>
+            </button>
+            
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">H</div>
+          <div class="logo-text" style="color: var(--text-white);">Horizon <span style="color: var(--secondary-color);">Academy</span></div>
+        </a>
+        <p>Horizon Academy offers world-class elementary and secondary educational pathways designed to guide individual student development and build character.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="about.html">About Horizon</a></li>
+          <li><a href="academics.html">Academic Programs</a></li>
+          <li><a href="index.html#campus">Campus Environment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="#">Parent Portal</a></li>
+          <li><a href="#">Student Handbook</a></li>
+          <li><a href="#">School Calendar</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Subscribe to our newsletter to receive calendar updates and highlights from campus life.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" class="form-control" placeholder="Your Email" required>
+          <button type="submit" class="btn btn-gold" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Horizon Academy. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline Navigation Logic & Form Submission -->
+  <script>
+    // Header Scroll Styling Action
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Hamburger Menu Action
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when links are clicked on mobile viewports
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Newsletter mock subscribe
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = newsletterForm.querySelector('input');
+      newsletterForm.innerHTML = `<p style="color: var(--secondary-color); font-weight: 600; margin: 0; padding-top: 10px;">✓ Subscribed successfully!</p>`;
+    });
+
+    // Asynchronous Feedback Form Submission
+    const feedbackForm = document.getElementById('academic-feedback-form');
+    const formWrapper = document.getElementById('feedback-form-wrapper');
+    const submitBtn = document.getElementById('submit-btn');
+
+    feedbackForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Retrieve form data
+      const name = document.getElementById('fb-name').value.trim();
+      const email = document.getElementById('fb-email').value.trim();
+      const role = document.getElementById('fb-role').value;
+      const feedback_type = document.getElementById('fb-type').value;
+      const comments = document.getElementById('fb-comments').value.trim();
+      
+      // Retrieve checked star rating
+      const ratingActive = document.querySelector('input[name="rating"]:checked');
+      if (!ratingActive) {
+        alert('Please select a star rating.');
+        return;
+      }
+      const rating = ratingActive.value;
+
+      // Prepare payload
+      const payload = {
+        name,
+        email,
+        role,
+        feedback_type,
+        rating: parseInt(rating),
+        comments
+      };
+
+      // Set loading state
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+
+      // Submit POST request to Express API
+      fetch('/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not OK');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Success state view transition
+        setTimeout(() => {
+          submitBtn.classList.remove('loading');
+          formWrapper.style.transition = 'all 0.5s ease';
+          formWrapper.innerHTML = `
+            <div style="text-align: center; padding: 50px 10px; color: var(--primary-color);">
+              <div style="font-size: 4rem; margin-bottom: 24px; color: var(--secondary-color);">✓</div>
+              <h3 style="font-size: 2rem; margin-bottom: 12px; font-family: var(--font-serif);">Thank You for Your Feedback!</h3>
+              <p style="color: var(--text-light); max-width: 480px; margin: 0 auto 30px; font-size: 1rem; line-height: 1.6;">
+                Your feedback has been successfully captured. The record has been safely written into our SQL database table.
+              </p>
+              <div style="display: inline-block; padding: 8px 16px; border-radius: var(--radius-sm); background: var(--bg-main); border: 1px solid rgba(var(--primary-rgb), 0.08); font-family: monospace; font-size: 0.9rem; color: var(--primary-color);">
+                Record DB Reference ID: #${data.id || 'N/A'}
+              </div>
+              <div style="margin-top: 30px;">
+                <button onclick="window.location.reload();" class="btn btn-secondary">Submit Another Response</button>
+              </div>
+            </div>
+          `;
+        }, 1000); // 1s visual mock latency for premium feel
+      })
+      .catch(error => {
+        console.error('Error submitting feedback:', error);
+        // Error state handling
+        setTimeout(() => {
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          
+          // Display a non-disruptive error box at the top of the form
+          let errorAlert = document.getElementById('feedback-error-alert');
+          if (!errorAlert) {
+            errorAlert = document.createElement('div');
+            errorAlert.id = 'feedback-error-alert';
+            errorAlert.style.padding = '14px 20px';
+            errorAlert.style.backgroundColor = '#fef2f2';
+            errorAlert.style.border = '1px solid #fca5a5';
+            errorAlert.style.borderRadius = 'var(--radius-sm)';
+            errorAlert.style.color = '#b91c1c';
+            errorAlert.style.marginBottom = '25px';
+            errorAlert.style.fontSize = '0.95rem';
+            formWrapper.insertBefore(errorAlert, feedbackForm);
+          }
+          errorAlert.innerHTML = `<strong>Submission Failed:</strong> Could not connect to the database server. Start the local server with <code>powershell -ExecutionPolicy Bypass -File .\\start-server.ps1</code> or <code>npm start</code>, then open <code>http://localhost:3000/academics.html</code>.`;
+          errorAlert.scrollIntoView({ behavior: 'smooth' });
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
